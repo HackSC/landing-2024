@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      { hostname: "avatars.slack-edge.com" }, // for slack pfp pictures in team members section
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
