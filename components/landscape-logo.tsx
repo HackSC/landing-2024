@@ -11,6 +11,6 @@ export const LogoLandscape = () => (
       width={51.97}
       height={43}
     />
-    <Subheading>HackSC</Subheading>
+    {/* <Subheading>HackSC</Subheading> */}
   </div>
 );

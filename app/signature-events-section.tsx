@@ -1,46 +1,57 @@
 import { Button, Colors, Heading } from "@hacksc/sctw-ui-kit";
-import { Inter } from "next/font/google";
 import Image from "next/image";
 import { styled } from "styled-components";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const EventCard = (props: {
   title: string;
   borderColor: string;
   imageUri: string;
 }) => (
+  <EventCardContainer $borderColor={props.borderColor}>
+    <Overlay />
+    {/* overlay */}
+    <Image
+      src={props.imageUri}
+      fill
+      style={{ objectFit: "fill", zIndex: 0, transform: "scale(101%)" }}
+      alt={`${props.title}'s image`}
+    />
+    <EventCardTitleText>{props.title}</EventCardTitleText>
+  </EventCardContainer>
+);
+
+const Overlay = () => (
   <div
     style={{
-      position: "relative",
-      width: "276.931px",
-      height: "425.742px",
-      borderRadius: "31.831px",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "end",
+      position: "absolute",
+      zIndex: 1,
+      width: "100%",
+      height: "100%",
+      background: "linear-gradient(360deg, #000 0%, rgba(0, 0, 0, 0.00) 100%)",
+      opacity: 0.9,
+      borderRadius: "31px", // as much as the image
+      transform: "scale(101%)",
     }}
-  >
-    <div
-      style={{
-        position: "absolute",
-        zIndex: 1,
-        width: "100%",
-        height: "100%",
-        background:
-          "linear-gradient(360deg, #000 0%, rgba(0, 0, 0, 0.00) 100%)",
-        opacity: 0.9,
-        borderRadius: "31.831px",
-
-        border: `10px solid ${props.borderColor}`,
-      }}
-    />{" "}
-    <Image src={props.imageUri} fill alt={`${props.title}'s image`} />
-    {/* overlay */}
-    <EventCardTitleText>{props.title}</EventCardTitleText>
-  </div>
+  />
 );
+
+const EventCardContainer = styled.div<{ $borderColor: string }>`
+  position: relative;
+  width: 276.931px;
+  height: 425.742px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9;
+  align-items: center;
+  justify-content: end;
+  border: 10px solid ${(props) => props.$borderColor};
+
+  transition: all 0.3s ease-in-out;
+  :hover {
+    transform: scale(1.1);
+  }
+`;
 
 const EventCardTitleText = styled.p`
   color: #fff;
@@ -64,25 +75,25 @@ export const SignatureEvents = () => {
   }[] = [
     {
       title: "SoCal Tech Week",
-      imageUri: "graphics/sctw-eventcard-image.svg",
+      imageUri: "/graphics/sctw-eventcard.svg",
       borderColor: Colors.Yellow.Yuhlow,
       buttonColor: "yellow",
     },
     {
       title: "HackSC-X",
-      imageUri: "graphics/sctw-eventcard-image.svg",
+      imageUri: "/graphics/hx-eventcard.png",
       borderColor: Colors.Red.Redward,
       buttonColor: "red",
     },
     {
       title: "HackSC Jr.",
-      imageUri: "graphics/sctw-eventcard-image.svg",
+      imageUri: "/graphics/hjr-eventcard.png",
       borderColor: Colors.Blue.Bloo,
       buttonColor: "blue",
     },
     {
       title: "Hack Nights",
-      imageUri: "graphics/sctw-eventcard-image.svg",
+      imageUri: "/graphics/hn-eventcard.png",
       borderColor: Colors.Neutral.Black,
       buttonColor: "blue",
     },

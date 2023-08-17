@@ -91,7 +91,7 @@ export const Footer = () => (
         </a>
       </BodyTextSmall>
     </div>
-    <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+    <SocialMediaAndAffiliatesContainer>
       <div
         style={{
           display: "inline-flex",
@@ -109,21 +109,36 @@ export const Footer = () => (
       <BodyTextSmall style={{ color: "white", fontWeight: 300 }}>
         © 2023. HackSC or its affiliates. All rights reserved.
       </BodyTextSmall>
-    </div>
+    </SocialMediaAndAffiliatesContainer>
   </Container>
 );
 
 const Container = styled.footer`
   display: flex;
+  gap: 3rem;
   justify-content: space-between;
   align-items: center;
   background-color: ${Colors.Blue.BlueIvy};
   padding: 3rem;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 const SocialIconContainer = styled.a`
   transition: all 0.3s ease-in-out;
   :hover {
     transform: translateY(-10%);
+  }
+`;
+
+const SocialMediaAndAffiliatesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @media (max-width: 600px) {
+    align-items: center;
+    gap: 1rem;
   }
 `;

@@ -19,8 +19,8 @@ export const AboutUs = () => (
       <Subblock>
         <Image
           src="/team-pics/who-we-are-pic.png"
-          width={481}
-          height={396}
+          width={450}
+          height={360}
           alt="A picture of the HackSC team at HackSC 2023, depicting one of our speakers, the CEO of Strava"
           style={{
             boxShadow: `14px 16px 0px 4px ${Colors.Yellow.Yuhlow}`,
@@ -29,13 +29,13 @@ export const AboutUs = () => (
         />
       </Subblock>
     </Block>
-    <Block>
+    <Block $reverseOnResponsive>
       <Subblock>
         <Image
           src="graphics/palm-tree-red-blue.svg"
           alt="A picture of the HackSC team at HackSC 2023, depicting one of our speakers, the CEO of Strava"
-          width={500}
-          height={700}
+          width={490}
+          height={680}
         />
       </Subblock>
       <Subblock>
@@ -56,12 +56,18 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   padding: 10rem 5rem 0;
+  align-items: center;
   background-color: #fef7e5;
+  gap: 3rem;
 `;
 
-const Block = styled.div`
+const Block = styled.div<{ $reverseOnResponsive?: boolean }>`
   display: flex;
   gap: 5rem;
+  @media (max-width: 1000px) {
+    flex-direction: ${(props) =>
+      props.$reverseOnResponsive ? "column-reverse" : "column"};
+  }
 `;
 
 const Subblock = styled.div`
@@ -69,4 +75,5 @@ const Subblock = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  max-width: 30rem;
 `;

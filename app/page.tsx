@@ -9,6 +9,7 @@ import * as Tooltip from "@radix-ui/react-tooltip";
 import { JoinTheTeam } from "./join-the-team-section";
 import { Media } from "./media-section";
 import { Footer } from "./footer";
+import { PreviousSponsor } from "./previous-sponsor-section";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <MeetTheTeam />
       <JoinTheTeam />
       <Media />
+      <PreviousSponsor />
       <Footer />
     </main>
   );

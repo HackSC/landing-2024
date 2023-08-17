@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LogoLandscape } from "./landscape-logo";
 import { styled } from "styled-components";
+import { BodyTextLarge } from "@hacksc/sctw-ui-kit";
 
 export const Navbar = () => (
   <nav
@@ -15,18 +16,17 @@ export const Navbar = () => (
       <LogoLandscape />
     </div>
     <div style={{ display: "flex", gap: "10px" }}>
-      <a href="">
+      {/* <a href="">
         <Navlink>Overview</Navlink>
-      </a>
+      </a> */}
     </div>
   </nav>
 );
 
-const Navlink = styled.p`
+const Navlink = styled(BodyTextLarge)`
   color: var(--redward, #ff514f);
   font-family: ABeeZee;
   font-size: 25px;
-  font-style: italic;
   font-weight: 400;
   text-transform: uppercase;
 `;

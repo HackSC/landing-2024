@@ -4,6 +4,7 @@ import { TeamMembersAPI } from "../services/team-members";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { TeamMember } from "../types/team-members";
+import Marquee from "react-fast-marquee";
 
 export const TeamMembersDisplay = (props: {
   onHoverTeamMember: (teamMember: TeamMember) => void;
@@ -61,7 +62,7 @@ export const TeamMembersDisplay = (props: {
 const AvatarContainer = styled.div`
   transition: transform 1s ease-out;
   :hover {
-    transform: translateY(-10%);
+    transform: scale(1.1);
   }
 `;
 
@@ -71,6 +72,7 @@ const TeamMembersContainer = styled.div`
   gap: 1rem;
   width: 100%;
   flex-wrap: wrap;
+  padding: 0.3rem 0;
 `;
 
 export const MeetTheTeam = () => {
@@ -85,7 +87,9 @@ export const MeetTheTeam = () => {
         Take a look at the people behind the scenes.
       </BodyTextLarge>
       <hr style={{ width: "4rem" }} />
-      <BodyTextLarge style={{ height: "1rem", color: "white" }}>
+      <BodyTextLarge
+        style={{ height: "1rem", color: "white", textAlign: "center" }}
+      >
         {chosenMember !== null ? (
           <>
             {chosenMember?.name} | {chosenMember.position}
@@ -94,10 +98,14 @@ export const MeetTheTeam = () => {
           "Hover over a team member to see what they do!👇"
         )}
       </BodyTextLarge>
-      <TeamMembersDisplay
-        onHoverTeamMember={(teamMember) => setChosenMember(teamMember)}
-        onMouseOutTeamMember={() => setChosenMember(null)}
-      />
+      <br style={{ width: "4rem" }} />
+      <Marquee pauseOnHover>
+        <TeamMembersDisplay
+          onHoverTeamMember={(teamMember) => setChosenMember(teamMember)}
+          onMouseOutTeamMember={() => setChosenMember(null)}
+        />
+        <div style={{ width: "1rem" }} />
+      </Marquee>
     </SectionContainer>
   );
 };
@@ -108,5 +116,5 @@ const SectionContainer = styled.section`
   align-items: center;
   background-color: ${Colors.Blue.BlueIvy};
   gap: 2rem;
-  padding: 5rem;
+  padding: 5rem 0;
 `;

@@ -69,6 +69,7 @@ const HeroContainer = styled.section`
 `;
 
 const HeroLeft = styled.div`
+  max-width: 30rem;
   display: flex;
   flex-direction: column;
 `;
