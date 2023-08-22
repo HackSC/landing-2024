@@ -8,7 +8,6 @@ import {
 import Image from "next/image";
 import { styled } from "styled-components";
 import Marquee from "react-fast-marquee";
-import Redirect from "../public/icons/redirect.svg";
 
 const containerStyle = {
   width: "100%",
@@ -104,7 +103,12 @@ const MediaNewCard = (props: {
           }}
         >
           {props.title}
-          <img src="/icons/redirect.svg" alt="Icon" height={12} />
+          <Image
+            src="/icons/redirect.svg"
+            alt="Redirect icon"
+            width={12}
+            height={12}
+          />
         </a>
       </BodyText>
 
@@ -181,11 +185,13 @@ export const Media = () => {
 };
 
 const Container = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding-top: 0rem;
-  padding: 5rem 0;
-  background-color: #001e69;
+  padding: 10rem 0;
+  background-image: url(/media-wavy-background-blue.svg);
+  background-size: cover;
+  z-index: 999;
 `;

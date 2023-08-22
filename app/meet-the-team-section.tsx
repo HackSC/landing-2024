@@ -83,7 +83,9 @@ export const MeetTheTeam = () => {
       <Heading style={{ color: "white", textAlign: "center" }}>
         MEET THE TEAM
       </Heading>
-      <BodyTextLarge style={{ color: Colors.Blue.Periwinkle }}>
+      <BodyTextLarge
+        style={{ color: Colors.Blue.Periwinkle, textAlign: "center" }}
+      >
         Take a look at the people behind the scenes.
       </BodyTextLarge>
       <hr style={{ width: "4rem" }} />
