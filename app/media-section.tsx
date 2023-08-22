@@ -91,7 +91,7 @@ export const Media = () => {
     {
       title: "@Spectacles",
       link: "https://twitter.com/Spectacles/status/1493255775522803712",
-      mediaLogo: "/sponsors/x.svg",
+      mediaLogo: "/icons/spectacles.svg",
       description:
         "Last weekend @hackscofficial brought university student developers, designers, and builders together to explore the world in AR! They had hands-on experience with building in #LensStudio and testing on Spectacles.",
     },
@@ -115,6 +115,13 @@ export const Media = () => {
       mediaLogo: "/icons/dailytrojan.svg",
       description:
         "HackSC, held from Friday to Sunday, was USC’s first ever campus-focused hackathon competition. Fourteen teams participated in the competition, which was hosted by the USC Association for Computing Machinery, to create technology products for the general student body.",
+    },
+    {
+      title: "@RippleX",
+      link: "https://twitter.com/RippleXDev/status/1223752848099270667",
+      mediaLogo: "/icons/ripplex.jpg",
+      description:
+        "Our Lead Engineer for APIs @intelliot is a @USC Alumni, so awesome for him to be back on campus for @hackscofficial to demo some of his open source work! #HackSC2020",
     },
     {
       title: "UCI Department of Informatics",
