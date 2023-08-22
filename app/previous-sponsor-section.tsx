@@ -53,10 +53,13 @@ export const PreviousSponsor = () => {
 };
 
 const Container = styled.section`
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem 0 0;
+  padding: 15rem 0 0;
   background-color: ${Colors.Blue.Periwinkle};
   gap: 3rem;
+  margin-top: -6rem;
 `;

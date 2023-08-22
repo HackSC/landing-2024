@@ -57,9 +57,12 @@ export const JoinTheTeam = () => (
 
 const Container = styled.section`
   display: flex;
+  position: relative;
+  z-index: 1;
   flex-direction: column;
   align-items: center;
-  padding: 20rem 0 30rem;
+  padding: 5rem 0 15rem;
+  margin-bottom: -5rem;
   gap: 2rem;
   background-color: ${Colors.Neutral.PaleBagel};
   background: url(/background-join-the-team.png);
