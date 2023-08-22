@@ -42,7 +42,9 @@ export const TeamMembersImageCarousel = () => {
 export const JoinTheTeam = () => (
   <Container>
     <Heading>JOIN THE TEAM</Heading>
-    <BodyTextLarge>DEscription</BodyTextLarge>
+    <BodyTextLarge>
+      Love what we do and want to be a part of it? Join the team!
+    </BodyTextLarge>
     <a href="https://team.hacksc.com" target="_blank">
       <Button variant={"outline"} color="red">
         LEARN MORE
