@@ -1,6 +1,9 @@
 import { Button, Colors, Heading } from "@hacksc/sctw-ui-kit";
 import Image from "next/image";
 import { styled } from "styled-components";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const EventCard = (props: {
   title: string;
@@ -16,7 +19,9 @@ const EventCard = (props: {
       style={{ objectFit: "fill", zIndex: 0, transform: "scale(101%)" }}
       alt={`${props.title}'s image`}
     />
-    <EventCardTitleText>{props.title}</EventCardTitleText>
+    <EventCardTitleText className={inter.className}>
+      {props.title}
+    </EventCardTitleText>
   </EventCardContainer>
 );
 
@@ -55,14 +60,9 @@ const EventCardContainer = styled.div<{ $borderColor: string }>`
 
 const EventCardTitleText = styled.p`
   color: #fff;
+  font-size: 1.5rem;
   z-index: 2;
   text-shadow: 0px 0px 11.936684608459473px rgba(0, 0, 0, 0.2);
-  font-family: Inter;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -1.25px;
   text-align: center;
 `;
 
