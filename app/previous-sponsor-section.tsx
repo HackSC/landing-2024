@@ -24,6 +24,7 @@ export const PreviousSponsor = () => {
   ];
   return (
     <Container>
+      <img src="/graphics/wav_bottom.svg" alt="top" />
       <Heading style={{ color: Colors.Blue.BlueIvy, textAlign: "center" }}>
         PREVIOUS SPONSORS
       </Heading>
@@ -57,6 +58,7 @@ const Container = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 5rem 0 0;
+  padding-top: 0;
   background-color: ${Colors.Blue.Periwinkle};
   gap: 3rem;
 `;

@@ -50,6 +50,13 @@ export const JoinTheTeam = () => (
     </a>
     <div style={{ height: "1rem" }} />
     <TeamMembersImageCarousel />
+    <img
+      src="/graphics/wav_top.svg"
+      alt="top"
+      style={{
+        marginTop: "100px",
+      }}
+    />
   </Container>
 );
 
@@ -59,6 +66,7 @@ const Container = styled.section`
   align-items: center;
   padding: 20rem 0 30rem;
   gap: 2rem;
+  padding-bottom: 0;
   background-color: ${Colors.Neutral.PaleBagel};
   background: url(/background-join-the-team.png);
   background-size: contain;
