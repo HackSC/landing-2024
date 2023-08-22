@@ -1,4 +1,6 @@
+import StyledComponentsRegistry from "./registry";
 import { Style } from "./styles";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "HackSC",
@@ -31,7 +33,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Style />
-      <body style={{ padding: 0, margin: 0 }}>{children}</body>
+      <Analytics />
+      <body style={{ padding: 0, margin: 0 }}>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 }
