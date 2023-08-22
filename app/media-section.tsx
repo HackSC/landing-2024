@@ -27,6 +27,7 @@ const MediaNewCard = (props: {
       height: "129px",
       wordWrap: "break-word",
       borderRadius: "5px",
+      alignItems: "center",
     }}
   >
     <div
@@ -59,6 +60,9 @@ const MediaNewCard = (props: {
             alt="Redirect icon"
             width={12}
             height={12}
+            style={{
+              marginLeft: "5px",
+            }}
           />
         </a>
       </BodyText>
