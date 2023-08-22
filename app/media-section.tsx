@@ -112,32 +112,23 @@ const MediaNewCard = (props: {
 export const Media = () => {
   return (
     <div>
+      <div
+        style={{
+          margin: 0,
+          padding: 0,
+          marginBottom: "-5px",
+          backgroundColor: "#FEF7E5",
+        }}
+      >
+        <img src="/graphics/wav_top.svg" alt="top" />
+      </div>
       <Container>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-            paddingTop: "0",
-            alignItems: "center",
-          }}
+        <Heading style={{ color: "white", textAlign: "center" }}>MEDIA</Heading>
+        <Subheading2
+          style={{ color: Colors.Blue.Periwinkle, textAlign: "center" }}
         >
-          <Heading style={{ color: "white", textAlign: "center" }}>
-            MEDIA
-          </Heading>
-          <Subheading2
-            style={{ color: Colors.Blue.Periwinkle, textAlign: "center" }}
-          >
-            HackSC in the news
-          </Subheading2>
-          <div
-            style={{
-              width: "100%",
-              overflow: "auto",
-              whiteSpace: "nowrap",
-            }}
-          ></div>
-        </div>
+          HackSC in the news
+        </Subheading2>
         <Marquee>
           <MediaNewCard
             mediaLogo="/icons/hacksc.svg"
@@ -191,6 +182,16 @@ export const Media = () => {
           />
         </Marquee>
       </Container>
+      <div
+        style={{
+          margin: 0,
+          padding: 0,
+          marginBottom: "-5px",
+          backgroundColor: "#94B0F8",
+        }}
+      >
+        <img src="/graphics/wav_bottom.svg" alt="top" />
+      </div>
     </div>
   );
 };
@@ -200,7 +201,7 @@ const Container = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 5rem;
-  margin-top: 0px;
-  background-color: ${Colors.Blue.BlueIvy};
+  padding-top: 0rem;
+  padding: 5rem 0;
+  background-color: #001e69;
 `;
