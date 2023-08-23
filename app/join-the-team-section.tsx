@@ -41,7 +41,7 @@ export const TeamMembersImageCarousel = () => {
 
 export const JoinTheTeam = () => (
   <Container>
-    <Heading>JOIN THE TEAM</Heading>
+    <Heading style={{ textAlign: "center" }}>JOIN THE TEAM</Heading>
     <BodyTextLarge style={{ textAlign: "center" }}>
       Love what we do and want to be a part of it? Join the team!
     </BodyTextLarge>
