@@ -2,6 +2,7 @@ import { Button, Colors, Heading } from "@hacksc/sctw-ui-kit";
 import Image from "next/image";
 import { styled } from "styled-components";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,12 +73,14 @@ export const SignatureEvents = () => {
     imageUri: string;
     borderColor: string;
     buttonColor: "blue" | "black" | "red" | "yellow";
+    externalLink?: string;
   }[] = [
     {
       title: "SoCal Tech Week",
       imageUri: "/graphics/sctw-eventcard.svg",
       borderColor: Colors.Yellow.Yuhlow,
       buttonColor: "yellow",
+      externalLink: "https://socaltechweek.com",
     },
     {
       title: "HackSC-X",
@@ -90,6 +93,7 @@ export const SignatureEvents = () => {
       imageUri: "/graphics/hjr-eventcard.png",
       borderColor: Colors.Blue.Bloo,
       buttonColor: "blue",
+      externalLink: "https://jr.hacksc.com",
     },
     {
       title: "Hack Nights",
@@ -117,9 +121,17 @@ export const SignatureEvents = () => {
               imageUri={el.imageUri}
               borderColor={el.borderColor}
             />
-            <Button color={el.buttonColor} variant="outline">
-              LEARN MORE
-            </Button>
+            {el.externalLink ? (
+              <Link href={el.externalLink} target="_blank">
+                <Button color={el.buttonColor} variant="outline">
+                  LEARN MORE
+                </Button>
+              </Link>
+            ) : (
+              <Button color={el.buttonColor} variant="outline" disabled>
+                COMING SOON
+              </Button>
+            )}
           </div>
         ))}
       </EventCardsContainer>

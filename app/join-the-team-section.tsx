@@ -13,8 +13,8 @@ export const TeamMembersImageCarousel = () => {
             <div
               style={{
                 position: "relative",
-                width: "600px",
-                height: "500px",
+                width: "400px",
+                height: "300px",
                 marginRight: "1rem",
               }}
               key={el}
@@ -42,7 +42,7 @@ export const TeamMembersImageCarousel = () => {
 export const JoinTheTeam = () => (
   <Container>
     <Heading>JOIN THE TEAM</Heading>
-    <BodyTextLarge>
+    <BodyTextLarge style={{ textAlign: "center" }}>
       Love what we do and want to be a part of it? Join the team!
     </BodyTextLarge>
     <a href="https://team.hacksc.com" target="_blank">
@@ -65,6 +65,6 @@ const Container = styled.section`
   margin-bottom: -5rem;
   gap: 2rem;
   background-color: ${Colors.Neutral.PaleBagel};
-  background: url(/background-join-the-team.png);
+  /* background: url(/background-join-the-team.png); */
   background-size: contain;
 `;

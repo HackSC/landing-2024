@@ -40,8 +40,8 @@ const MediaNewCard = (props: {
       <Image
         src={props.mediaLogo}
         alt="Media logo for HackSC"
-        width={90}
-        height={90}
+        width={100}
+        height={100}
       />
     </div>
     <div style={{ display: "flex", flexDirection: "column", gap: "3px" }}>
@@ -52,6 +52,9 @@ const MediaNewCard = (props: {
           style={{
             textDecoration: "none",
             color: "inherit",
+            display: "inline-flex",
+            gap: "0.3rem",
+            alignItems: "center",
           }}
         >
           {props.title}

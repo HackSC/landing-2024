@@ -17,26 +17,30 @@ export const AboutUs = () => (
         </BodyText>
       </Subblock>
       <Subblock>
-        <Image
-          src="/team-pics/who-we-are-pic.png"
-          width={450}
-          height={360}
-          alt="A picture of the HackSC team at HackSC 2023, depicting one of our speakers, the CEO of Strava"
-          style={{
-            boxShadow: `14px 16px 0px 4px ${Colors.Yellow.Yuhlow}`,
-            borderRadius: "10px",
-          }}
-        />
+        <FirstImageContainer>
+          <Image
+            src="/team-pics/who-we-are-pic.png"
+            fill
+            objectFit="cover"
+            alt="A picture of the HackSC team at HackSC 2023, depicting one of our speakers, the CEO of Strava"
+            style={{
+              boxShadow: `14px 16px 0px 4px ${Colors.Yellow.Yuhlow}`,
+              borderRadius: "10px",
+            }}
+          />
+        </FirstImageContainer>
       </Subblock>
     </Block>
     <Block $reverseOnResponsive>
       <Subblock>
-        <Image
-          src="graphics/palm-tree-red-blue.svg"
-          alt="A picture of the HackSC team at HackSC 2023, depicting one of our speakers, the CEO of Strava"
-          width={490}
-          height={680}
-        />
+        <SecondImageContainer>
+          <Image
+            src="graphics/palm-tree-red-blue.svg"
+            alt="A graphic of 2 palm trees, one red and one blue"
+            fill
+            objectFit="contain"
+          />
+        </SecondImageContainer>
       </Subblock>
       <Subblock>
         <Heading>WHAT WE DO</Heading>
@@ -76,4 +80,24 @@ const Subblock = styled.div`
   justify-content: center;
   gap: 1rem;
   max-width: 30rem;
+`;
+
+const FirstImageContainer = styled.div`
+  position: relative;
+  width: 450px;
+  height: 360px;
+
+  @media (max-width: 400px) {
+    width: 300px;
+  }
+`;
+
+const SecondImageContainer = styled.div`
+  position: relative;
+  width: 490px;
+  height: 680px;
+  @media (max-width: 400px) {
+    width: 350px;
+    height: 500px;
+  }
 `;
