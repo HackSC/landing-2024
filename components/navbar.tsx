@@ -11,7 +11,7 @@ export const Navbar = () => (
       <LogoLandscape />
     </div>
     <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-      <Navlink href={homepageLink} style={{ color: Colors.Neutral.Black }}>
+      <Navlink href={homepageLink} style={{ color: Colors.Red.Redward }}>
         <NavigationText>Overview</NavigationText>
       </Navlink>
       <Navlink href={teampageLink}>
@@ -22,7 +22,7 @@ export const Navbar = () => (
 );
 
 const Navlink = styled(Link)`
-  color: var(--redward, #ff514f);
+  color: black;
   cursor: pointer;
   text-decoration: none;
   :hover {
