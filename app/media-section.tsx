@@ -84,7 +84,7 @@ export const Media = () => {
     {
       title: "@HackSC",
       link: "https://twitter.com/hackscofficial/status/1648137800120774657",
-      mediaLogo: "/icons/hacksc.svg",
+      mediaLogo: "/icons/hacksc.png",
       description:
         "This past weekend, we were so excited to help empower the next generation of innovators at #HackSCJr! It was an inspiring day filled with brilliant minds and endless possibilities. We can't wait to host more community events such as this one in the near future!  #FutureTechies",
     },
