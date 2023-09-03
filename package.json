@@ -12,7 +12,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@hacksc/sctw-ui-kit": "^1.0.0",
+    "@hacksc/sctw-ui-kit": "^2.0.0",
     "@radix-ui/react-tooltip": "^1.0.6",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
