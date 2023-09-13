@@ -1,6 +1,12 @@
 import { BodyText, Colors, Heading } from "@hacksc/sctw-ui-kit";
 import Image from "next/image";
-import { styled } from "styled-components";
+import {
+  styleBlock,
+  styleFirstImageContainer,
+  styleSecondImageContainer,
+  styleSectionContainer,
+  styleSubblock,
+} from "./about-us-section.css";
 
 export const AboutUs = () => (
   <SectionContainer>
@@ -56,48 +62,25 @@ export const AboutUs = () => (
   </SectionContainer>
 );
 
-const SectionContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  padding: 10rem 5rem 0;
-  align-items: center;
-  background-color: #fef7e5;
-  gap: 3rem;
-`;
+const SectionContainer = (props: React.ComponentPropsWithoutRef<"section">) => (
+  <section className={styleSectionContainer} {...props}></section>
+);
 
-const Block = styled.div<{ $reverseOnResponsive?: boolean }>`
-  display: flex;
-  gap: 5rem;
-  @media (max-width: 1000px) {
-    flex-direction: ${(props) =>
-      props.$reverseOnResponsive ? "column-reverse" : "column"};
-  }
-`;
+interface BlockProps extends React.ComponentPropsWithoutRef<"div"> {
+  $reverseOnResponsive?: boolean;
+}
+const Block = ({ $reverseOnResponsive, ...props }: BlockProps) => (
+  <div className={styleBlock({ $reverseOnResponsive })} {...props}></div>
+);
 
-const Subblock = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  max-width: 30rem;
-`;
+const Subblock = (props: React.ComponentPropsWithoutRef<"div">) => (
+  <div className={styleSubblock} {...props}></div>
+);
 
-const FirstImageContainer = styled.div`
-  position: relative;
-  width: 450px;
-  height: 360px;
+const FirstImageContainer = (props: React.ComponentPropsWithoutRef<"div">) => (
+  <div className={styleFirstImageContainer} {...props}></div>
+);
 
-  @media (max-width: 400px) {
-    width: 300px;
-  }
-`;
-
-const SecondImageContainer = styled.div`
-  position: relative;
-  width: 490px;
-  height: 680px;
-  @media (max-width: 400px) {
-    width: 350px;
-    height: 500px;
-  }
-`;
+const SecondImageContainer = (props: React.ComponentPropsWithoutRef<"div">) => (
+  <div className={styleSecondImageContainer} {...props}></div>
+);

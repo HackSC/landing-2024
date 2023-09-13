@@ -3,6 +3,13 @@ import Image from "next/image";
 import { styled } from "styled-components";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import {
+  styleEventCardContainer,
+  styleEventCardTitleText,
+  styleEventCardsContainer,
+  styleSectionContainer,
+} from "./signature-events-section.css";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,31 +48,24 @@ const Overlay = () => (
   />
 );
 
-const EventCardContainer = styled.div<{ $borderColor: string }>`
-  position: relative;
-  width: 276.931px;
-  height: 425.742px;
-  border-radius: 40px;
-  display: flex;
-  flex-direction: column;
-  z-index: 9;
-  align-items: center;
-  justify-content: end;
-  border: 10px solid ${(props) => props.$borderColor};
+interface EventCardContainerProps
+  extends React.ComponentPropsWithoutRef<"div"> {
+  $borderColor: string;
+}
+const EventCardContainer = ({
+  $borderColor,
+  ...props
+}: EventCardContainerProps) => (
+  <div
+    className={styleEventCardContainer}
+    style={assignInlineVars({ [$borderColor]: $borderColor })}
+    {...props}
+  ></div>
+);
 
-  transition: all 0.3s ease-in-out;
-  :hover {
-    transform: scale(1.1);
-  }
-`;
-
-const EventCardTitleText = styled.p`
-  color: #fff;
-  font-size: 1.5rem;
-  z-index: 2;
-  text-shadow: 0px 0px 11.936684608459473px rgba(0, 0, 0, 0.2);
-  text-align: center;
-`;
+const EventCardTitleText = (props: React.ComponentPropsWithoutRef<"p">) => (
+  <p className={styleEventCardTitleText} {...props}></p>
+);
 
 export const SignatureEvents = () => {
   const events: {
@@ -139,18 +139,10 @@ export const SignatureEvents = () => {
   );
 };
 
-const SectionContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  padding: 5rem 4rem;
-`;
+const SectionContainer = (props: React.ComponentPropsWithoutRef<"section">) => (
+  <section className={styleSectionContainer} {...props}></section>
+);
 
-const EventCardsContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap;
-`;
+const EventCardsContainer = (props: React.ComponentPropsWithoutRef<"div">) => (
+  <div className={styleEventCardsContainer} {...props}></div>
+);

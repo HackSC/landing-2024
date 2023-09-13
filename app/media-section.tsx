@@ -6,8 +6,8 @@ import {
   Subheading2,
 } from "@hacksc/sctw-ui-kit";
 import Image from "next/image";
-import { styled } from "styled-components";
 import Marquee from "react-fast-marquee";
+import { styleContainer } from "./media-section.css";
 
 const MediaNewCard = (props: {
   link: string;
@@ -158,14 +158,6 @@ export const Media = () => {
   );
 };
 
-const Container = styled.section`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 10rem 0;
-  background-image: url(/media-wavy-background-blue.svg);
-  background-size: cover;
-  z-index: 999;
-`;
+const Container = (props: React.ComponentPropsWithoutRef<"section">) => (
+  <section className={styleContainer} {...props}></section>
+);

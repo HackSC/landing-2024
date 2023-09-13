@@ -34,9 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Analytics />
-      <body style={{ padding: 0, margin: 0 }}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
+      <body style={{ padding: 0, margin: 0 }}>{children}</body>
     </html>
   );
 }

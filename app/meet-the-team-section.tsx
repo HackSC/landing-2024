@@ -1,10 +1,15 @@
-import { BodyTextLarge, Colors, Heading, Text } from "@hacksc/sctw-ui-kit";
+import { BodyTextLarge, Colors, Heading } from "@hacksc/sctw-ui-kit";
 import { styled } from "styled-components";
 import { TeamMembersAPI } from "../services/team-members";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { TeamMember } from "../types/team-members";
 import Marquee from "react-fast-marquee";
+import {
+  styleAvatarContainer,
+  styleSectionContainer,
+  styleTeamMembersContainer,
+} from "./meet-the-team-section.css";
 
 export const TeamMembersDisplay = (props: {
   onHoverTeamMember: (teamMember: TeamMember) => void;
@@ -59,21 +64,13 @@ export const TeamMembersDisplay = (props: {
   );
 };
 
-const AvatarContainer = styled.div`
-  transition: transform 1s ease-out;
-  :hover {
-    transform: scale(1.1);
-  }
-`;
+const AvatarContainer = (props: React.ComponentPropsWithoutRef<"div">) => (
+  <div className={styleAvatarContainer} {...props}></div>
+);
 
-const TeamMembersContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  flex-wrap: wrap;
-  padding: 0.3rem 0;
-`;
+const TeamMembersContainer = (props: React.ComponentPropsWithoutRef<"div">) => (
+  <div className={styleTeamMembersContainer} {...props}></div>
+);
 
 export const MeetTheTeam = () => {
   const [chosenMember, setChosenMember] = useState<TeamMember | null>(null);
@@ -112,11 +109,6 @@ export const MeetTheTeam = () => {
   );
 };
 
-const SectionContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: ${Colors.Blue.BlueIvy};
-  gap: 2rem;
-  padding: 5rem 0;
-`;
+const SectionContainer = (props: React.ComponentPropsWithoutRef<"section">) => (
+  <section className={styleSectionContainer} {...props}></section>
+);
