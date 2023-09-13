@@ -1,19 +1,15 @@
-import { Button, Colors, Heading } from "@hacksc/sctw-ui-kit";
+import { BodyTextLarge, Colors, Heading } from "@hacksc/sctw-ui-kit";
 import Image from "next/image";
-import { styled } from "styled-components";
-import { Inter } from "next/font/google";
 import Link from "next/link";
 import {
   styleEventCardContainer,
-  styleEventCardTitleText,
   styleEventCardsContainer,
   styleSectionContainer,
 } from "./signature-events-section.css";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 
-const inter = Inter({ subsets: ["latin"] });
-
 const EventCard = (props: {
+  hasLink?: boolean;
   title: string;
   borderColor: string;
   imageUri: string;
@@ -27,9 +23,9 @@ const EventCard = (props: {
       style={{ objectFit: "fill", zIndex: 0, transform: "scale(101%)" }}
       alt={`${props.title}'s image`}
     />
-    <EventCardTitleText className={inter.className}>
-      {props.title}
-    </EventCardTitleText>
+    <BodyTextLarge style={{ zIndex: 1, marginBottom: "1rem" }}>
+      {props.hasLink && "🔗"} {props.title}
+    </BodyTextLarge>
   </EventCardContainer>
 );
 
@@ -61,10 +57,6 @@ const EventCardContainer = ({
     style={assignInlineVars({ [$borderColor]: $borderColor })}
     {...props}
   ></div>
-);
-
-const EventCardTitleText = (props: React.ComponentPropsWithoutRef<"p">) => (
-  <p className={styleEventCardTitleText} {...props}></p>
 );
 
 export const SignatureEvents = () => {
@@ -106,34 +98,53 @@ export const SignatureEvents = () => {
     <SectionContainer>
       <Heading style={{ textAlign: "center" }}>OUR SIGNATURE EVENTS</Heading>
       <EventCardsContainer>
-        {events.map((el, i) => (
-          <div
-            key={`${el}-${i}`}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-              alignItems: "center",
-            }}
-          >
-            <EventCard
-              title={el.title}
-              imageUri={el.imageUri}
-              borderColor={el.borderColor}
-            />
-            {el.externalLink ? (
-              <Link href={el.externalLink} target="_blank">
-                <Button color={el.buttonColor} variant="outline">
-                  LEARN MORE
-                </Button>
-              </Link>
-            ) : (
-              <Button color={el.buttonColor} variant="outline" disabled>
-                COMING SOON
-              </Button>
-            )}
-          </div>
-        ))}
+        {events.map((el, i) => {
+          if (el.externalLink === undefined) {
+            return (
+              <div
+                key={`${el}-${i}`}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1rem",
+                  alignItems: "center",
+                }}
+              >
+                <EventCard
+                  title={el.title}
+                  imageUri={el.imageUri}
+                  borderColor={el.borderColor}
+                />
+              </div>
+            );
+          }
+          return (
+            <Link
+              href={el.externalLink}
+              target="_blank"
+              style={{
+                color: "white",
+              }}
+              key={`${el}-${i}`}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1rem",
+                  alignItems: "center",
+                }}
+              >
+                <EventCard
+                  title={el.title}
+                  imageUri={el.imageUri}
+                  borderColor={el.borderColor}
+                  hasLink
+                />
+              </div>
+            </Link>
+          );
+        })}
       </EventCardsContainer>
     </SectionContainer>
   );

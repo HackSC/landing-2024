@@ -14,6 +14,11 @@ export const styleBlock = recipe({
   base: {
     display: "flex",
     gap: "5rem",
+    "@media": {
+      "(max-width: 1000px)": {
+        flexDirection: "column",
+      },
+    },
   },
 
   variants: {
@@ -22,13 +27,6 @@ export const styleBlock = recipe({
         "@media": {
           "(max-width: 1000px)": {
             flexDirection: "column-reverse",
-          },
-        },
-      },
-      false: {
-        "@media": {
-          "(max-width: 1000px)": {
-            flexDirection: "column",
           },
         },
       },

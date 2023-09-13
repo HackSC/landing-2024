@@ -21,7 +21,6 @@ export const TeamMembersImageCarousel = () => {
             >
               <Image
                 fill
-                priority
                 style={{
                   objectFit: "cover",
 

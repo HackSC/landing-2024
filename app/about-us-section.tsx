@@ -10,7 +10,7 @@ import {
 
 export const AboutUs = () => (
   <SectionContainer>
-    <Block>
+    <Block $reverseOnResponsive={false}>
       <Subblock>
         <Heading>WHO WE ARE</Heading>
         <BodyText>

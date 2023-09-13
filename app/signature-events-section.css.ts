@@ -13,19 +13,12 @@ export const styleEventCardContainer = style({
   alignItems: "center",
   justifyContent: "end",
   border: `10px solid ${$borderColor}`,
+  color: "white",
 
-  transition: "all 0.3s ease-in-out",
+  transition: "all 0.1s ease-in-out",
   ":hover": {
-    transform: "scale(1.1)",
+    transform: "scale(1.02)",
   },
-});
-
-export const styleEventCardTitleText = style({
-  color: "#fff",
-  fontSize: "1.5rem",
-  zIndex: 2,
-  textShadow: "0px 0px 11.936684608459473px rgba(0, 0, 0, 0.2)",
-  textAlign: "center",
 });
 
 export const styleSectionContainer = style({

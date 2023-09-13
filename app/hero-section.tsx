@@ -80,6 +80,7 @@ export const Hero = () => {
             src="/graphics/stairs.svg"
             alt={"A graphic of a staircase"}
             fill
+            priority
             objectFit="contain"
           />
         </StairsContainer>
