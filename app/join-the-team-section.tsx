@@ -1,7 +1,7 @@
-import { BodyTextLarge, Button, Colors, Heading } from "@hacksc/sctw-ui-kit";
+import { BodyTextLarge, Button, Heading } from "@hacksc/sctw-ui-kit";
 import Image from "next/image";
-import { styled } from "styled-components";
 import Marquee from "react-fast-marquee";
+import { styleContainer } from "./join-the-team-section.css";
 
 export const TeamMembersImageCarousel = () => {
   const imagesToShow = 11; // MUST BE EXACT
@@ -21,7 +21,6 @@ export const TeamMembersImageCarousel = () => {
             >
               <Image
                 fill
-                priority
                 style={{
                   objectFit: "cover",
 
@@ -55,16 +54,6 @@ export const JoinTheTeam = () => (
   </Container>
 );
 
-const Container = styled.section`
-  display: flex;
-  position: relative;
-  z-index: 1;
-  flex-direction: column;
-  align-items: center;
-  padding: 5rem 0 15rem;
-  margin-bottom: -5rem;
-  gap: 2rem;
-  background-color: ${Colors.Neutral.PaleBagel};
-  /* background: url(/background-join-the-team.png); */
-  background-size: contain;
-`;
+const Container = (props: React.ComponentPropsWithoutRef<"section">) => (
+  <section className={styleContainer} {...props}></section>
+);

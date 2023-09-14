@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { styled } from "styled-components";
 import {
   Button,
   Colors,
@@ -11,6 +10,13 @@ import {
 import { FormEventHandler, useState } from "react";
 import { registerWaitlist } from "../services/getwaitlist";
 import { Toaster, toast } from "sonner";
+import {
+  styleHeroContainer,
+  styleHeroLeft,
+  styleHeroRight,
+  styleStairsContainer,
+  styleUpdateFormContainer,
+} from "./hero-section.css";
 
 export const Hero = () => {
   const [updateMeEmail, setUpdateMeEmail] = useState("");
@@ -74,6 +80,7 @@ export const Hero = () => {
             src="/graphics/stairs.svg"
             alt={"A graphic of a staircase"}
             fill
+            priority
             objectFit="contain"
           />
         </StairsContainer>
@@ -82,37 +89,22 @@ export const Hero = () => {
   );
 };
 
-const StairsContainer = styled.div`
-  position: relative;
-  width: 398px;
-  height: 378px;
-  @media (max-width: 400px) {
-    width: 300px;
-  }
-`;
+const StairsContainer = (props: React.ComponentPropsWithoutRef<"div">) => (
+  <div className={styleStairsContainer} {...props}></div>
+);
 
-const UpdateFormContainer = styled.form`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
+const UpdateFormContainer = (props: React.ComponentPropsWithoutRef<"form">) => (
+  <form className={styleUpdateFormContainer} {...props}></form>
+);
 
-const HeroContainer = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem;
-  gap: 5rem;
+const HeroContainer = (props: React.ComponentPropsWithoutRef<"section">) => (
+  <section className={styleHeroContainer} {...props}></section>
+);
 
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
-`;
+const HeroLeft = (props: React.ComponentPropsWithoutRef<"div">) => (
+  <div className={styleHeroLeft} {...props}></div>
+);
 
-const HeroLeft = styled.div`
-  max-width: 30rem;
-  display: flex;
-  flex-direction: column;
-`;
-
-const HeroRight = styled.div``;
+const HeroRight = (props: React.ComponentPropsWithoutRef<"div">) => (
+  <div className={styleHeroRight} {...props}></div>
+);

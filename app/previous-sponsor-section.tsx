@@ -1,7 +1,7 @@
 import { Colors, Heading } from "@hacksc/sctw-ui-kit";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import { styled } from "styled-components";
+import { styleContainer } from "./previous-sponsor-section.css";
 
 export const PreviousSponsor = () => {
   const sponsorOrder = [
@@ -52,14 +52,6 @@ export const PreviousSponsor = () => {
   );
 };
 
-const Container = styled.section`
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15rem 0 0;
-  background-color: ${Colors.Blue.Periwinkle};
-  gap: 3rem;
-  margin-top: -6rem;
-`;
+const Container = (props: React.ComponentPropsWithoutRef<"section">) => (
+  <section className={styleContainer} {...props}></section>
+);

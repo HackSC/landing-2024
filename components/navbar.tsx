@@ -1,7 +1,7 @@
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import { LogoLandscape } from "./landscape-logo";
-import { styled } from "styled-components";
 import { Colors, NavigationText } from "@hacksc/sctw-ui-kit";
+import * as styles from "./navbar.css";
 
 const homepageLink = "https://hacksc.com";
 const teampageLink = "https://team.hacksc.com";
@@ -21,24 +21,10 @@ export const Navbar = () => (
   </Nav>
 );
 
-const Navlink = styled(Link)`
-  color: black;
-  cursor: pointer;
-  text-decoration: none;
-  :hover {
-    text-decoration: underline;
-  }
-`;
+const Navlink = (props: LinkProps & React.ComponentPropsWithoutRef<"a">) => (
+  <Link className={styles.styleNavlink} {...props}></Link>
+);
 
-const Nav = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 1rem 3rem;
-  gap: 1rem;
-
-  @media (max-width: 400px) {
-    flex-direction: column;
-  }
-`;
+const Nav = (props: React.ComponentPropsWithoutRef<"nav">) => (
+  <nav className={styles.styleNav} {...props}></nav>
+);

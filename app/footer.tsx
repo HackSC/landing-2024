@@ -1,6 +1,10 @@
-import { BodyText, BodyTextSmall, Colors } from "@hacksc/sctw-ui-kit";
+import { BodyTextSmall } from "@hacksc/sctw-ui-kit";
 import Image from "next/image";
-import { styled } from "styled-components";
+import {
+  styleContainer,
+  styleSocialIconContainer,
+  styleSocialMediaAndAffiliatesContainer,
+} from "./footer.css";
 
 const socialMedias: { href: string; src: React.ReactNode; alt: string }[] = [
   {
@@ -113,32 +117,14 @@ export const Footer = () => (
   </Container>
 );
 
-const Container = styled.footer`
-  display: flex;
-  gap: 3rem;
-  justify-content: space-between;
-  align-items: center;
-  background-color: ${Colors.Blue.BlueIvy};
-  padding: 3rem;
-  @media (max-width: 700px) {
-    flex-direction: column;
-  }
-`;
+const Container = (props: React.ComponentPropsWithoutRef<"footer">) => (
+  <footer className={styleContainer} {...props}></footer>
+);
 
-const SocialIconContainer = styled.a`
-  transition: all 0.3s ease-in-out;
-  :hover {
-    transform: translateY(-10%);
-  }
-`;
+const SocialIconContainer = (props: React.ComponentPropsWithoutRef<"a">) => (
+  <a className={styleSocialIconContainer} {...props}></a>
+);
 
-const SocialMediaAndAffiliatesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-
-  @media (max-width: 600px) {
-    align-items: center;
-    gap: 1rem;
-  }
-`;
+const SocialMediaAndAffiliatesContainer = (
+  props: React.ComponentPropsWithoutRef<"div">,
+) => <div className={styleSocialMediaAndAffiliatesContainer} {...props}></div>;

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Subheading } from "@hacksc/sctw-ui-kit";
 
 export const LogoLandscape = () => (
   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
