@@ -20,7 +20,12 @@ const EventCard = (props: {
     <Image
       src={props.imageUri}
       fill
-      style={{ objectFit: "fill", zIndex: 0, transform: "scale(101%)" }}
+      style={{
+        objectFit: "fill",
+        zIndex: 0,
+        transform: "scale(101%)",
+        maxWidth: "450px",
+      }}
       alt={`${props.title}'s image`}
     />
     <BodyTextLarge style={{ zIndex: 1, marginBottom: "1rem" }}>
