@@ -12,7 +12,7 @@ import { PreviousSponsor } from "./previous-sponsor-section";
 
 export default function Home() {
   return (
-    <main style={{ position: "relative" }}>
+    <main>
       <Navbar />
       <Hero />
       <AboutUs />
