@@ -48,8 +48,8 @@ export const styleFirstImageContainer = style({
   height: "360px",
 
   "@media": {
-    "(max-width: 400px)": {
-      width: "300px",
+    "(max-width: 450px)": {
+      width: "250px",
     },
   },
 });
@@ -60,9 +60,9 @@ export const styleSecondImageContainer = style({
   height: "680px",
 
   "@media": {
-    "(max-width: 400px)": {
-      width: "350px",
-      height: "500px",
+    "(max-width: 450px)": {
+      width: "250px",
+      height: "400px",
     },
   },
 });

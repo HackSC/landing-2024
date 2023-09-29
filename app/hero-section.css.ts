@@ -6,7 +6,7 @@ export const styleStairsContainer = style({
   height: "378px",
 
   "@media": {
-    "(max-width: 400px)": {
+    "(max-width: 450px)": {
       width: "300px",
     },
   },
