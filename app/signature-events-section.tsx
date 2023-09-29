@@ -79,6 +79,7 @@ export const SignatureEvents = () => {
       imageUri: "/graphics/hx-eventcard.png",
       borderColor: Colors.Red.Redward,
       buttonColor: "red",
+      externalLink: "https://x.hacksc.com",
     },
     {
       title: "HackSC Jr.",
@@ -92,6 +93,7 @@ export const SignatureEvents = () => {
       imageUri: "/graphics/hn-eventcard.png",
       borderColor: Colors.Neutral.Black,
       buttonColor: "blue",
+      externalLink: "https://hack.sc/hack-nights",
     },
   ];
   return (
