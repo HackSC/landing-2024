@@ -8,7 +8,6 @@ import {
   Subheading2,
 } from "@hacksc/sctw-ui-kit";
 import { FormEventHandler, useState } from "react";
-import { registerWaitlist } from "../services/getwaitlist";
 import { Toaster, toast } from "sonner";
 import {
   styleHeroContainer,
@@ -17,6 +16,7 @@ import {
   styleStairsContainer,
   styleUpdateFormContainer,
 } from "./hero-section.css";
+import { saveContactToList } from "@/services/sendgrid";
 
 export const Hero = () => {
   const [updateMeEmail, setUpdateMeEmail] = useState("");
@@ -24,7 +24,7 @@ export const Hero = () => {
 
   const onSubmitUpdateMe: FormEventHandler = (ev) => {
     ev.preventDefault();
-    registerWaitlist(updateMeEmail)
+    saveContactToList(updateMeEmail)
       .then(() => {
         toast.success("You've signed up for updates to HackSC!", {
           description:
