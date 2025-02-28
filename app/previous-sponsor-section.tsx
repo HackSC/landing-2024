@@ -8,6 +8,7 @@ export const PreviousSponsor = () => {
     "2k",
     "accenture",
     "always-ai",
+    "amino",
     "do",
     "elastic",
     "gcp",
@@ -30,13 +31,14 @@ export const PreviousSponsor = () => {
       <Marquee>
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           {sponsorOrder.map((el) => (
-            <Image
-              key={el}
-              src={`/sponsors/${el}.svg`}
-              alt={el}
-              width={150}
-              height={150}
-            />
+            <div key={el} style={{ borderRadius: "10%", overflow: "hidden" }}>
+              <Image
+                src={`/sponsors/${el}.svg`}
+                alt={el}
+                width={150}
+                height={150}
+              />
+            </div>
           ))}
         </div>
         <div style={{ marginRight: "1rem" }} />
