@@ -29,7 +29,7 @@ export const PreviousSponsor = () => {
       <Heading style={{ color: Colors.Blue.BlueIvy, textAlign: "center" }}>
         PREVIOUS SPONSORS
       </Heading>
-      <Marquee speed={50}>
+      <Marquee>
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           {sponsorOrder.map((el) => (
             <div key={el} style={{ borderRadius: "10%", overflow: "hidden",  }}>
