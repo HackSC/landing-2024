@@ -22,21 +22,23 @@ export const PreviousSponsor = () => {
     "snap",
     "vercel",
     "x",
+    "piara2",
   ];
   return (
     <Container>
       <Heading style={{ color: Colors.Blue.BlueIvy, textAlign: "center" }}>
         PREVIOUS SPONSORS
       </Heading>
-      <Marquee>
+      <Marquee speed={90}>
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           {sponsorOrder.map((el) => (
-            <div key={el} style={{ borderRadius: "10%", overflow: "hidden" }}>
+            <div key={el} style={{ borderRadius: "10%", overflow: "hidden",  }}>
               <Image
                 src={`/sponsors/${el}.svg`}
                 alt={el}
-                width={150}
-                height={150}
+                width={170}
+                height={170}
+                
               />
             </div>
           ))}
