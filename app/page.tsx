@@ -17,8 +17,7 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <SignatureEvents />
-      {/* Temporarily removing the MeetTheTeam section due to AWS "suspended account" issue. */}
-      {/* <MeetTheTeam />  */}
+      <MeetTheTeam />
       <JoinTheTeam />
       <Media />
       <PreviousSponsor />
